@@ -1,0 +1,8 @@
+#asciidoctorpreview-toolbar-button
+{
+  list-style-image: url("chrome://asciidoctorpreview/skin/enabled.png");
+}
+[iconsize="small"] #asciidoctorpreview-toolbar-button
+{
+  list-style-image: url("chrome://asciidoctorpreview/skin/enabled.png");
+}

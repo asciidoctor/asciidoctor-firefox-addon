@@ -1,0 +1,5 @@
+content   asciidoctorpreview          		chrome/content/
+skin      asciidoctorpreview	classic/1.0	chrome/skin/
+resource  asciidoctorpreview                chrome/skin/
+overlay   chrome://browser/content/browser.xul  chrome://asciidoctorpreview/content/overlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://asciidoctorpreview/skin/overlay.css

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+    <Description about="urn:mozilla:install-manifest">
+        <em:type>2</em:type> <!-- 2 : Extension -->
+        <em:id>asciidoctor-firefox-addon@asciidoctor.org</em:id>
+        <em:version>0.1</em:version>
+        <em:name>Asciidoctor.js Live Preview</em:name>
+        <em:description>Render AsciiDoc (.ad, .adoc, .asciidoc) as HTML inside Firefox!</em:description>
+        <em:creator>Guillaume Grossetie</em:creator>
+        <em:targetApplication>
+            <Description>
+                <!-- Firefox -->
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>19.0</em:minVersion>
+                <em:maxVersion>27.0</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+    </Description>
+</RDF>

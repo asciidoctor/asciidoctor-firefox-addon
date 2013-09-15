@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://asciidoctorpreview/skin/overlay.css" type="text/css"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://asciidoctorpreview/content/jquery.js"></script>
+	<script type="application/x-javascript" src="chrome://asciidoctorpreview/content/opal.js"></script>
+	<script type="application/x-javascript" src="chrome://asciidoctorpreview/content/asciidoctor.js"></script>
+	<script type="application/x-javascript" src="chrome://asciidoctorpreview/content/asciidocify.js"></script>
+    <toolbarpalette id="BrowserToolbarPalette">
+        <toolbarbutton id="asciidoctorpreview-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+                       label="Asciidoctor" tooltiptext="Asciidoctor Live Preview"
+                       oncommand="asciidoctorpreview.onToolbarButtonCommand()"/>
+    </toolbarpalette>
+</overlay>
