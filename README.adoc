@@ -1,0 +1,13 @@
+= asciidoctor-firefox-addon, Asciidoctor Firefox Addon
+Guillaume Grossetie
+:sources: https://github.com/asciidoctor/asciidoctor-firefox-addon
+:license: https://github.com/asciidoctor/asciidoctor-firefox-addon/blob/master/LICENSE
+
+This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
+
+== Copyright
+
+Copyright (C) 2013 Guillaume Grossetie.
+Free use of this software is granted under the terms of the MIT License.
+
+See the {license}[LICENSE] file for details.
