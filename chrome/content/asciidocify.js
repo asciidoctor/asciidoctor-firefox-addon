@@ -34,10 +34,10 @@ if (typeof asciidoctorpreview === 'undefined') {
             var document = aEvent.originalTarget;
             var regexpAdFile = /\.a(sciidoc|doc|d)$/i;
             if (regexpAdFile.test(document.location)) {
-				var contentType = document.contentType;
+                var contentType = document.contentType;
                 if (isAddonEnabled()) {
-					if (contentType && (contentType.indexOf('html') > -1)) {
-						return;
+                    if (contentType && (contentType.indexOf('html') > -1)) {
+                        return;
                     }
                     appendStyles(document);
                     render(document);
