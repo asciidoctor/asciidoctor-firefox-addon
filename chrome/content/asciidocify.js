@@ -12,9 +12,18 @@ if (typeof asciidoctorpreview === 'undefined') {
     var asciidoctorpreview = {
 
         load:function () {
-            var appcontent = document.getElementById('appcontent');
-            if (appcontent) {
-                appcontent.addEventListener('DOMContentLoaded', this.onPageLoad, true);
+            var addEventListener;
+            if (window.BrowserApp) {
+                // We are running in Firefox Mobile
+                addEventListener = window.BrowserApp.deck.addEventListener;
+            } else {
+                var appcontent = document.getElementById("appcontent");
+                if (appcontent) {
+                    addEventListener = appcontent.addEventListener;
+                }
+            }
+            if (addEventListener) {
+                addEventListener('DOMContentLoaded', this.onPageLoad, true);
             }
             var prefs = getAddonPrefs();
             var enabled = isAddonEnabled(prefs);
@@ -61,7 +70,10 @@ if (typeof asciidoctorpreview === 'undefined') {
     function updateAddonIcon(enabled) {
         // Update the extension icon
         var iconName = enabled ? "enabled.png" : "disabled.png";
-        document.getElementById('asciidoctorpreview-toolbar-button').style.listStyleImage = 'url("chrome://asciidoctorpreview/skin/' + iconName + '")';
+        // There is no toolbar in Firefox Mobile
+        if (document.getElementById('asciidoctorpreview-toolbar-button')) {
+            document.getElementById('asciidoctorpreview-toolbar-button').style.listStyleImage = 'url("chrome://asciidoctorpreview/skin/' + iconName + '")';
+        }
     }
 
     function reloadPage() {
