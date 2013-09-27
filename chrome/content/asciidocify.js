@@ -32,7 +32,7 @@ if (typeof asciidoctorpreview === 'undefined') {
 
         onPageLoad:function (aEvent) {
             var document = aEvent.originalTarget;
-            var regexpAdFile = /\.a(sciidoc|doc|d)$/i;
+            var regexpAdFile = /\.a(?:sc(?:iidoc)?|d(?:oc)?)$/i;
             if (regexpAdFile.test(document.location)) {
                 var contentType = document.contentType;
                 if (isAddonEnabled()) {
