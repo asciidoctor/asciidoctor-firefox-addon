@@ -6,7 +6,7 @@
         <em:id>asciidoctor-firefox-addon@asciidoctor.org</em:id>
         <em:version>0.1</em:version>
         <em:name>Asciidoctor.js Live Preview</em:name>
-        <em:description>Render AsciiDoc (.ad, .adoc, .asciidoc) as HTML inside Firefox!</em:description>
+        <em:description>Render AsciiDoc (.ad, .adoc, .asc, .asciidoc) as HTML inside Firefox!</em:description>
         <em:creator>Guillaume Grossetie</em:creator>
         <em:targetApplication>
             <Description>
