@@ -1,0 +1,16 @@
+{
+    "license":"MIT",
+    "description":"Render AsciiDoc (.ad, .adoc, .asciidoc) as HTML inside Firefox!",
+    "contributors":[],
+    "author":"Guillaume Grossetie",
+    "url":"https://github.com/asciidoctor/asciidoctor-firefox-addon",
+    "dependencies":["api-utils", "addon-kit"],
+    "version":"0.1.4",
+    "lib":"lib",
+    "fullName":"Asciidoctor.js Live Preview",
+    "main":"main",
+    "id":"asciidoctor-firefox-addon@asciidoctor.org",
+    "name":"asciidoctorjslivepreview",
+	"icon":"data/asciidoc_icon_48.png",
+	"icon64":"data/asciidoc_icon_64.png"
+}

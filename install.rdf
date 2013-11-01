@@ -3,11 +3,6 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
     <Description about="urn:mozilla:install-manifest">
         <em:type>2</em:type> <!-- 2 : Extension -->
-        <em:id>asciidoctor-firefox-addon@asciidoctor.org</em:id>
-        <em:version>0.1.3</em:version>
-        <em:name>Asciidoctor.js Live Preview</em:name>
-        <em:description>Render AsciiDoc (.ad, .adoc, .asciidoc) as HTML inside Firefox!</em:description>
-        <em:creator>Guillaume Grossetie</em:creator>
         <em:targetApplication>
             <Description>
                 <!-- Firefox -->
