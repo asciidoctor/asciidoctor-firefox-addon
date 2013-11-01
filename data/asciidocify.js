@@ -20,10 +20,16 @@ var ASCIIDOCTOR_OPTIONS = Opal.hash2([ 'attributes' ], {
  * Render AsciiDoc content as HTML
  */
 function render(document) {
-    var content = document.firstChild;
-    var data = content.textContent;
-    document.body.innerHTML = '';
-    var generatedHtml = Opal.Asciidoctor.$render(data, ASCIIDOCTOR_OPTIONS);
+    var data = document.firstChild.textContent;
+    document.body.innerHTML = "";
+    var generatedHtml = undefined;
+    try {
+        generatedHtml = Opal.Asciidoctor.$render(data, ASCIIDOCTOR_OPTIONS);
+    }
+    catch (e) {
+        showErrorMessage(e.name + " : " + e.message);
+        return;
+    }
     document.body.innerHTML = "<div id='content'>" + generatedHtml + "</div>";
 }
 
@@ -36,4 +42,13 @@ function appendStyles(document) {
     asciidoctorLink.id = 'asciidoctor-style';
     asciidoctorLink.href = "resource://asciidoctor-firefox-addon-at-asciidoctor-dot-org/asciidoctorjslivepreview/data/asciidoctor.css";
     document.head.appendChild(asciidoctorLink);
+}
+
+/**
+ * Show error message
+ * @param message The error message
+ */
+function showErrorMessage(message) {
+    var messageText = "<p>" + message + "</p>";
+    document.body.innerHTML = "<div id='content'><h4>Error</h4>" + messageText + "</div>";
 }
