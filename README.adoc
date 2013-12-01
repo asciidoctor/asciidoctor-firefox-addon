@@ -2,8 +2,25 @@
 Guillaume Grossetie
 :sources: https://github.com/asciidoctor/asciidoctor-firefox-addon
 :license: https://github.com/asciidoctor/asciidoctor-firefox-addon/blob/master/LICENSE
+:ff-addon-sdk-install: https://addons.mozilla.org/en-US/developers/docs/sdk/latest/dev-guide/tutorials/installation.html
+:ff-addon-site: https://addons.mozilla.org/
 
 This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
+
+== Usage
+
+ 1. Install extension from {ff-addon-site}[Firefox Add-ons site]
+ 1. Open local or remote .ad, .adoc, .asc, .asciidoc file in Firefox
+ 1. Enjoy!
+
+== Installation
+
+To manually build the extension bundle (`.xpi`) from the source you need to install the {ff-addon-sdk-install}[Firefox Add-on SDK].
+Then execute the command `cfx xpi` from the add-on's directory:
+
+    cfx xpi
+
+This command will produce a file named `asciidoctorjslivepreview.xpi`. You can simply drag and drop it on Firefox to install the Add-on.
 
 == Copyright
 
