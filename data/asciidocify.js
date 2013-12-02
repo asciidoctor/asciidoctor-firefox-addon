@@ -21,16 +21,37 @@ var ASCIIDOCTOR_OPTIONS = Opal.hash2([ 'attributes' ], {
  */
 function render(document) {
     var data = document.firstChild.textContent;
-    document.body.innerHTML = "";
+    document.body.innerHTML = '';
     var generatedHtml = undefined;
     try {
+        try {
+            // if charset is not UTF-8, try techniques to coerce it to UTF-8
+            // likely used only for local files
+            if (document.characterSet.toUpperCase() != 'UTF-8') {
+                try {
+                    // this technique works if all characters are in standard ASCII set
+                    // see: http://www.ascii-code.com
+                    data = decodeURIComponent(escape(data));
+                } catch (decodeError) {
+                    // XMLHttpRequest responseText is UTF-8 encoded by default
+                    try {
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('GET', window.location.href, false);
+                        xhr.addEventListener('load', function() {
+                            data = xhr.responseText;
+                        });
+                        xhr.send();
+                    } catch (xhrError) {}
+                }
+            }
+        } catch (e) {}
         generatedHtml = Opal.Asciidoctor.$render(data, ASCIIDOCTOR_OPTIONS);
     }
     catch (e) {
         showErrorMessage(e.name + " : " + e.message);
         return;
     }
-    document.body.innerHTML = "<div id='content'>" + generatedHtml + "</div>";
+    document.body.innerHTML = '<div id="content">' + generatedHtml + '</div>';
 }
 
 /**
