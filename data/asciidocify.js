@@ -13,7 +13,7 @@ var asciidocify = {
 };
 
 var ASCIIDOCTOR_OPTIONS = Opal.hash2([ 'attributes' ], {
-    'attributes':[ 'notitle!' ]
+    'attributes':[ 'showtitle', 'toc!', 'toc2!' ]
 });
 
 /**
