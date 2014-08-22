@@ -5,7 +5,7 @@
     "author":"Guillaume Grossetie",
     "url":"https://github.com/asciidoctor/asciidoctor-firefox-addon",
     "dependencies":["api-utils", "addon-kit"],
-    "version":"0.2.0",
+    "version":"0.2.1",
     "lib":"lib",
     "fullName":"Asciidoctor.js Live Preview",
     "main":"main",
