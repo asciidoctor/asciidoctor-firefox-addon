@@ -17,7 +17,7 @@ var asciidocify = {
 var ASCIIDOCTOR_OPTIONS = Opal.hash2(['backend', 'safe', 'attributes'], {
   'backend': 'xhtml',
   'safe': 'server',
-  'attributes': ['showtitle', 'toc!', 'toc2!']
+  'attributes': ['showtitle', 'platform=opal', 'platform-opal', 'env=browser', 'env-browser']
 });
 
 /**
