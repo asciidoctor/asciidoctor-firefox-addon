@@ -19,7 +19,7 @@ This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] 
 To manually build the extension bundle (`.xpi`) from the source you need to install the {ff-addon-sdk-install}[Firefox Add-on SDK].
 Then execute the command `cfx xpi` from the add-on's directory:
 
-    cfx xpi
+ $ cfx xpi
 
 This command will produce a file named `asciidoctorjslivepreview.xpi`. You can simply drag and drop it on Firefox to install the Add-on.
 
