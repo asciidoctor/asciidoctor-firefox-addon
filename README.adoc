@@ -3,18 +3,26 @@ Guillaume Grossetie
 :sources: https://github.com/asciidoctor/asciidoctor-firefox-addon
 :license: https://github.com/asciidoctor/asciidoctor-firefox-addon/blob/master/LICENSE
 :ff-addon-sdk-install: https://addons.mozilla.org/en-US/developers/docs/sdk/latest/dev-guide/tutorials/installation.html
-:ff-addon-site: https://addons.mozilla.org/
-:latest-release: https://github.com/asciidoctor/asciidoctor-firefox-addon/releases/download/v0.2.0/asciidoctorjslivepreview.xpi
+:ff-addon-site: https://addons.mozilla.org/firefox/addon/asciidoctorjs-live-preview/
+:latest-release: https://github.com/asciidoctor/asciidoctor-firefox-addon/releases/latest
 
 This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
 
 == Usage
 
- 1. Install extension from {ff-addon-site}[Firefox Add-ons site] or download the {latest-release}[latest release] and drag and drop the `xpi` file on Firefox
- 1. Open local or remote .ad, .adoc, .asc, .asciidoc file in Firefox
- 1. Enjoy!
+ 1. Install the extension from the {ff-addon-site}[Firefox Add-ons site] or from the {latest-release}[GitHub latest release page]. When you download the `xpi` file, if Firefox downloads it instead of directly installing it, just drag and drop it on Firefox
+ 1. Open local or remote `.ad`, `.adoc`, `.asc`, `.asciidoc` file in Firefox
+ 1. Click on the _Asciidoctor Live Preview_ button in the toolbar (button with an `A` icon) to activate or deactivate the rendering.
 
-== Installation
+[[img-preview-active]]
+.An asciidoc file opened in firefox with HTML preview
+image::img/asciidoctor-preview-enabled.png[]
+
+[[img-preview-inactive]] 
+.An asciidoc file opened in firefox without HTML preview
+image::img/asciidoctor-preview-disabled.png[]
+
+== Local build
 
 To manually build the extension bundle (`.xpi`) from the source you need to install the {ff-addon-sdk-install}[Firefox Add-on SDK].
 Then execute the command `cfx xpi` from the add-on's directory:
