@@ -7,8 +7,12 @@
     "dependencies":["api-utils", "addon-kit"],
     "version":"0.3.0",
     "lib":"lib",
+    "engines": {
+        "firefox": ">=19",
+        "fennec": ">=19"
+    },
     "fullName":"Asciidoctor.js Live Preview",
-    "main":"main",
+    "main":"lib/main.js",
     "id":"asciidoctor-firefox-addon@asciidoctor.org",
     "name":"asciidoctorjslivepreview",
 	"icon":"data/asciidoc_icon_48.png",
