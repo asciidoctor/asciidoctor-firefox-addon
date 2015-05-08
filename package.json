@@ -1,20 +1,23 @@
 {
-    "license":"MIT",
-    "description":"Render AsciiDoc (.ad, .adoc, .asc, .asciidoc) as HTML inside Firefox!",
-    "contributors":["Dan Allen"],
-    "author":"Guillaume Grossetie",
-    "url":"https://github.com/asciidoctor/asciidoctor-firefox-addon",
-    "dependencies":["api-utils", "addon-kit"],
-    "version":"0.3.0",
-    "lib":"lib",
-    "engines": {
-        "firefox": ">=19",
-        "fennec": ">=19"
-    },
-    "fullName":"Asciidoctor.js Live Preview",
-    "main":"lib/main.js",
-    "id":"asciidoctor-firefox-addon@asciidoctor.org",
-    "name":"asciidoctorjslivepreview",
-	"icon":"data/asciidoc_icon_48.png",
-	"icon64":"data/asciidoc_icon_64.png"
+  "license": "MIT",
+  "description": "Render AsciiDoc (.ad, .adoc, .asc, .asciidoc) as HTML inside Firefox!",
+  "contributors": ["Dan Allen"],
+  "author": "Guillaume Grossetie",
+  "url": "https://github.com/asciidoctor/asciidoctor-firefox-addon",
+  "dependencies": [
+    "api-utils",
+    "addon-kit"
+  ],
+  "version": "0.3.0",
+  "lib": "lib",
+  "engines": {
+    "firefox": ">=19",
+    "fennec": ">=19"
+  },
+  "fullName": "Asciidoctor.js Live Preview",
+  "main": "lib/main.js",
+  "id": "asciidoctor-firefox-addon@asciidoctor.org",
+  "name": "asciidoctorjslivepreview",
+  "icon": "data/asciidoc_icon_48.png",
+  "icon64": "data/asciidoc_icon_64.png"
 }
