@@ -89,8 +89,12 @@ function sanitizeAndShowHTML(html) {
  * @param html The sanitized HTML to show in the web view.
  */
 function showHTML(html) {
+  // Save <script> before updating document body
+  var scripts = document.querySelectorAll('script');
   appendStyles();
   appendContent(html);
+  // Append saved <script> to document body
+  appendScripts(scripts);
 }
 
 /**
@@ -132,4 +136,15 @@ function appendContent(html) {
   contentDiv.id = 'content'
   contentDiv.innerHTML = html;
   document.body.appendChild(contentDiv);
+}
+
+/**
+ * Append <script> to document body.
+ */
+function appendScripts(scripts) {
+  var length = scripts.length;
+  for (var i = 0; i < length; i++) {
+    var script = scripts[i];
+    document.body.appendChild(script);
+  }
 }
