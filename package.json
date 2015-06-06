@@ -11,8 +11,8 @@
   "version": "0.3.0",
   "lib": "lib",
   "engines": {
-    "firefox": ">=19",
-    "fennec": ">=19"
+    "firefox": ">=34.0",
+    "fennec": ">=34.0"
   },
   "fullName": "Asciidoctor.js Live Preview",
   "main": "lib/main.js",
