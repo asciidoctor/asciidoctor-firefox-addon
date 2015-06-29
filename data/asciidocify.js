@@ -38,7 +38,6 @@ function convertSanitizeAndRender() {
  * @return {*}
  */
 function convertToHTML(content) {
-  emptyBody();
   return Opal.Asciidoctor.$convert(content, ASCIIDOCTOR_OPTIONS);
 }
 
@@ -59,6 +58,8 @@ function sanitizeAndShowHTML(html) {
 function showHTML(html) {
   // Save <script> before updating document body
   var scripts = document.querySelectorAll('script');
+  // Empty document body
+  emptyBody();
   appendStyles();
   // Append to document body
   var contentDiv = createContentDiv();
