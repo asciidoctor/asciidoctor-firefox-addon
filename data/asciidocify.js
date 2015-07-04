@@ -14,12 +14,28 @@ var asciidocify = {
   }
 };
 
-var ASCIIDOCTOR_OPTIONS = Opal.hash2(['base_dir', 'backend', 'safe', 'attributes'], {
-  'base_dir': Opal.File.$dirname(window.location.href),
-  'backend': 'html5',
-  'safe': 'server',
-  'attributes': ['showtitle', 'platform=opal', 'platform-opal', 'env=browser', 'env-browser']
-});
+/**
+ * Build Asciidoctor options
+ */
+function buildAsciidoctorOptions() {
+  // Default attributes
+  var attributes = 'showtitle icons=font@ platform=opal platform-opal env=browser env-browser chart-engine=chartist data-uri!';
+  var href = window.location.href;
+  var fileName = href.split('/').pop();
+  var fileExtension = fileName.split('.').pop();
+  if (fileExtension !== '') {
+    attributes = attributes.concat(' ').concat('outfilesuffix=.').concat(fileExtension);
+  }
+  var pwd = Opal.File.$dirname(href);
+  Opal.ENV['$[]=']("PWD", pwd);
+  return Opal.hash2(['base_dir', 'safe', 'backend', 'attributes'], {
+    'base_dir': pwd,
+    'safe': 'server',
+    // Force backend to html5
+    'backend': 'html5',
+    'attributes': attributes
+  });
+}
 
 /**
  * Convert AsciiDoc content as HTML and render in web view
@@ -38,7 +54,7 @@ function convertSanitizeAndRender() {
  * @return {*}
  */
 function convertToHTML(content) {
-  return Opal.Asciidoctor.$convert(content, ASCIIDOCTOR_OPTIONS);
+  return Opal.Asciidoctor.$convert(content, buildAsciidoctorOptions());
 }
 
 /**
