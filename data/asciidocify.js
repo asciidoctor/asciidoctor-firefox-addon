@@ -18,11 +18,18 @@ var asciidocify = {
  * Build Asciidoctor options
  */
 function buildAsciidoctorOptions() {
+  // Preferences
+  var preferences = self.options.preferences;
+  var customAttributes = preferences.customAttributes;
+  var safeMode = preferences.safeMode;
   // Default attributes
   var attributes = 'showtitle icons=font@ platform=opal platform-opal env=browser env-browser chart-engine=chartist data-uri!';
   var href = window.location.href;
   var fileName = href.split('/').pop();
   var fileExtension = fileName.split('.').pop();
+  if (customAttributes) {
+    attributes = attributes.concat(' ').concat(customAttributes);
+  }
   if (fileExtension !== '') {
     attributes = attributes.concat(' ').concat('outfilesuffix=.').concat(fileExtension);
   }
@@ -30,7 +37,7 @@ function buildAsciidoctorOptions() {
   Opal.ENV['$[]=']("PWD", pwd);
   return Opal.hash2(['base_dir', 'safe', 'backend', 'attributes'], {
     'base_dir': pwd,
-    'safe': 'server',
+    'safe': safeMode,
     // Force backend to html5
     'backend': 'html5',
     'attributes': attributes
