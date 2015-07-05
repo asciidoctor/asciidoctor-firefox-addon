@@ -17,7 +17,5 @@
   "fullName": "Asciidoctor.js Live Preview",
   "main": "lib/main.js",
   "id": "asciidoctor-firefox-addon@asciidoctor.org",
-  "name": "asciidoctorjslivepreview",
-  "icon": "data/asciidoc_icon_48.png",
-  "icon64": "data/asciidoc_icon_64.png"
+  "name": "asciidoctorjslivepreview"
 }
