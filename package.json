@@ -17,5 +17,37 @@
   "fullName": "Asciidoctor.js Live Preview",
   "main": "lib/main.js",
   "id": "asciidoctor-firefox-addon@asciidoctor.org",
-  "name": "asciidoctorjslivepreview"
+  "name": "asciidoctorjslivepreview",
+  "preferences": [{
+    "name": "customAttributes",
+    "title": "Custom attributes",
+    "description": "A string of space-separated key/value attribute pairs (e.g., source-highlighter=highlightjs).",
+    "type": "string",
+    "value": ""
+  },
+  {
+    "name": "safeMode",
+    "title": "Safe mode",
+    "description": "Controls features related to security.",
+    "type": "menulist",
+    "value": "server",
+    "options": [
+      {
+         "value": "unsafe",
+         "label": "Unsafe"
+      },
+      {
+        "value": "safe",
+        "label": "Safe"
+      },
+      {
+        "value": "server",
+        "label": "Server"
+      },
+      {
+        "value": "secure",
+        "label": "Secure"
+      }
+    ]
+  }]
 }
