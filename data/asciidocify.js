@@ -49,10 +49,34 @@ function buildAsciidoctorOptions() {
  * Convert AsciiDoc content as HTML and render in web view
  */
 function convertSanitizeAndRender() {
-  try {
+  // If charset is not UTF-8, try techniques to coerce it to UTF-8 (likely used only for local files)
+  // Maybe one day this will be the default behavior https://bugzilla.mozilla.org/show_bug.cgi?id=1071816
+  if (document.characterSet.toUpperCase() != 'UTF-8') {
+    try {
+      // This technique works if all characters are in standard ASCII set
+      // see: http://www.ascii-code.com
+      sanitizeAndShowHTML(convertToHTML(decodeURIComponent(escape(document.firstChild.textContent))));
+    } catch (decodeError) {
+      // XMLHttpRequest responseText is UTF-8 encoded by default
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', window.location.href, true);
+      xhr.onload = function (evt) {
+        if (xhr.readyState === 4) {
+          // NOTE status is 0 for local files (i.e., file:// URIs)
+          if (xhr.status === 200 || xhr.status === 0) {
+            sanitizeAndShowHTML(convertToHTML(xhr.responseText));
+          } else {
+            console.error('Could not read AsciiDoc source. Reason: [' + xhr.status + '] ' + xhr.statusText);
+          }
+        }
+      };
+      xhr.onerror = function (evt) {
+        console.error(xhr.statusText);
+      };
+      xhr.send();
+    }
+  } else {
     sanitizeAndShowHTML(convertToHTML(document.firstChild.textContent));
-  } catch (ex) {
-    showErrorMessage(ex.name + ' : ' + ex.message);
   }
 }
 
