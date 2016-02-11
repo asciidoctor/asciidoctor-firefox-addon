@@ -1,0 +1,12 @@
+= Contributing code
+
+== Upgrade Font Awesome
+
+ . Download the latest version from http://fontawesome.io/
+ . Encode `fontawesome-webfont.woff` to Base64 (http://www.giftofspeed.com/base64-encoder/)
+ . Edit `font-awesome.min.css` file and replace the `src` attribute of the `font-family` definition with:
++
+```
+src: url(data:application/font-woff;base64,replace_with_woff_file_in_base64) format('woff');
+```
+ . Copy `font-awesome.min.css` to `data/css/`
