@@ -82,7 +82,14 @@ function convertSanitizeAndRender() {
  * @return {*}
  */
 function convertToHTML(content) {
-  return Opal.Asciidoctor.$convert(content, buildAsciidoctorOptions());
+  var asciidoctorDocument = Opal.Asciidoctor.$load(content, buildAsciidoctorOptions());
+  document.title = asciidoctorDocument.$doctitle(Opal.hash({sanitize: true}));
+  document.body.className = asciidoctorDocument.$doctype();
+  var maxWidth = asciidoctorDocument.$attr('max-width');
+  if (maxWidth) {
+    document.body.style.maxWidth = maxWidth;
+  }
+  return asciidoctorDocument.$convert();
 }
 
 /**
