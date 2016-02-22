@@ -148,13 +148,13 @@ function appendStyles() {
   var asciidoctorLink = document.createElement('link');
   asciidoctorLink.rel = 'stylesheet';
   asciidoctorLink.id = 'asciidoctor-style';
-  asciidoctorLink.href = 'resource://asciidoctor-firefox-addon-at-asciidoctor-dot-org/data/css/asciidoctor.css';
+  asciidoctorLink.href = 'resource://asciidoctor-firefox-addon-at-asciidoctor/data/css/asciidoctor.css';
   document.head.appendChild(asciidoctorLink);
 
   var fontAwesomeLink = document.createElement('link');
   fontAwesomeLink.rel = 'stylesheet';
   fontAwesomeLink.id = 'fontawesome-style';
-  fontAwesomeLink.href = 'resource://asciidoctor-firefox-addon-at-asciidoctor-dot-org/data/css/font-awesome.min.css';
+  fontAwesomeLink.href = 'resource://asciidoctor-firefox-addon-at-asciidoctor/data/css/font-awesome.min.css';
   document.head.appendChild(fontAwesomeLink);
 }
 
