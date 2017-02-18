@@ -2,7 +2,7 @@ var asciidocify = {
   load: function() {
     var contentType = document.contentType;
     // ending with .asciidoc, .adoc, .ad or .asc OR containing .asciidoc?, .adoc?, .ad? or .asc?
-    var regexpAdFile = /\.a(sciidoc|doc|d|sc)$|\.a(sciidoc|doc|d|sc)\?|/i;
+    var regexpAdFile = /\.a(sciidoc|doc|d|sc)$|\.a(sciidoc|doc|d|sc)\?/i;
     var isAsciiDocFile = regexpAdFile.test(document.location);
     var isHTMLContent = contentType && (contentType.indexOf('html') > -1);
     if (isAsciiDocFile && !isHTMLContent) {
