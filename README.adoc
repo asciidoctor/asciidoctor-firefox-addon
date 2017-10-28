@@ -1,4 +1,4 @@
-= asciidoctor-firefox-addon, Asciidoctor Firefox Addon
+= Asciidoctor Firefox Addon
 Guillaume Grossetie
 :sources: https://github.com/asciidoctor/asciidoctor-firefox-addon
 :license: https://github.com/asciidoctor/asciidoctor-firefox-addon/blob/master/LICENSE
@@ -6,8 +6,21 @@ Guillaume Grossetie
 :latest-release: https://github.com/asciidoctor/asciidoctor-firefox-addon/releases/latest
 :jpm-install: https://www.npmjs.com/package/jpm
 
-This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
+[IMPORTANT]
+====
+*No longer actively maintained since Firefox now supports support WebExtensions API :tada:*
 
+> In the past, there were several toolsets for developing Firefox extensions, but by the end of November 2017, extensions must be built using WebExtensions APIs. 
+Extensions written using WebExtensions APIs for Firefox are designed to be cross-browser compatible.
+In most cases it will run in Chrome, Edge, and Opera with few if any changes.
+They are also fully compatible with multiprocess Firefox.
+
+The code base for Chrome, Edge, Opera and Firefox is now available at https://github.com/asciidoctor/asciidoctor-chrome-extension
+
+Version https://github.com/asciidoctor/asciidoctor-chrome-extension/releases/tag/v1.5.5.110[1.5.5.110] is the first version of the Assciidoctor "Browser" extension compatible with Firefox. 
+====
+
+This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
 == Usage
 
  1. Install the extension from the {ff-addon-site}[Firefox Add-ons site] or from the {latest-release}[GitHub latest release page]. When you download the `xpi` file, if Firefox downloads it instead of directly installing it, just drag and drop it on Firefox
