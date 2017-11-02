@@ -6,6 +6,8 @@ Guillaume Grossetie
 :latest-release: https://github.com/asciidoctor/asciidoctor-firefox-addon/releases/latest
 :jpm-install: https://www.npmjs.com/package/jpm
 
+This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
+
 [IMPORTANT]
 ====
 *No longer actively maintained since Firefox now supports WebExtensions API :tada:*
@@ -17,8 +19,6 @@ They are also fully compatible with multiprocess Firefox.
 
 The code base for Chrome, Chromium, Opera and Firefox is now available at https://github.com/asciidoctor/asciidoctor-chrome-extension
 ====
-
-This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to render AsciiDoc as HTML inside Firefox!
 
 == Usage
 
